@@ -4,6 +4,8 @@
 
 Author: Mehrdad Khani
 
+**English** | [فارسی](README.fa.md)
+
 ---
 
 ## TL;DR

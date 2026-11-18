@@ -1,6 +1,6 @@
 # Full transcript (Persian, verbatim)
 
-Extracted from the ChatGPT conversation API on 2026-11-18. `[audio]` = user turn spoken in voice mode (as transcribed by ChatGPT). Message numbers match the README. One off-topic section (#16–#103: personal business and marketing discussion unrelated to the study) has been removed; numbering is kept so references stay valid.
+Extracted from the ChatGPT conversation API on 2026-11-18. `[audio]` = user turn spoken in voice mode (as transcribed by ChatGPT). Message numbers match the README. Off-topic personal/business parts have been removed; numbering is kept so references stay valid. Kept from that section: the backend's raw bash/curl tool calls (#60, #65–#68), which show Codex executing tools behind the voice, and one exchange (#78–#79) where the backend corrects itself.
 
 ---
 
@@ -71,7 +71,60 @@ Extracted from the ChatGPT conversation API on 2026-11-18. `[audio]` = user turn
 
  بذار، چک کنم ببینم چی می‌تونم دقیق بگم. چیزی که من می‌بینم اینه که «جی‌پی‌تی ۶» اسم خانواده‌ست و «۶.۲» هم توی همون خانواده‌ست. تو می‌گی «۶.۲» رو انتخاب کردی، ولی من نسخهٔ دقیق مدل پشت همین جواب رو نمی‌بینم. پس نمی‌تونم بگم «۶.۲» بوده یا «۶.۰».
 
-### #16–#103 — [removed: off-topic personal/business discussion, unrelated to the study]
+### #16–#59 — [removed: off-topic]
+
+### #60 — assistant
+
+bash -lc /bin/bash -lc "curl -LsS --max-time 8 https://rdap.identitydigital.services/rdap/domain/canadianai.ai | python -c 'import sys,json; d=json.load(sys.stdin); print(d.get(\"ldhName\"),d.get(\"errorCode\"),d.get(\"events\"))'"
+
+### #61–#64 — [removed: off-topic]
+
+### #65 — assistant
+
+ چشم، می‌رم چندتای رایج رو الان چک می‌کنم: دات اورگ، دات آی او، دات سی او رو بررسی می‌کنم، ببینم چه خبره. هم canadianai رو با این پسونده‌ها چک می‌کنم، هم canadian رو به تنهایی. چند لحظه به من وقت بده.
+
+### #66 — assistant
+
+bash -lc /bin/bash -lc "python - <<'PY'
+import concurrent.futures,urllib.request,urllib.error
+bases={'org':'https://rdap.publicinterestregistry.org/rdap/domain/','io':'https://rdap.nic.io/domain/','co':'https://rdap.nic.co/domain/','net':'https://rdap.verisign.com/net/v1/domain/','app':'https://pubapi.registry.google/rdap/domain/','dev':'https://pubapi.registry.google/rdap/domain/'}
+def f(x):
+ d,u=x
+ try:
+  with urllib.request.urlopen(u+d,timeout=6) as r:return d,r.status
+ except urllib.error.HTTPError as e:return d,e.code,e.read(200).decode()
+ except Exception as e:return d,str(e)
+with concurrent.futures.ThreadPoolExecutor() as p:
+ for r in p.map(f,[(n+'.'+s,u) for s,u in bases.items() for n in ['canadianai','canadian']]): print(r)
+PY"
+
+### #67 — assistant
+
+bash -lc /bin/bash -lc "python - <<'PY'
+import urllib.request as u, concurrent.futures as c
+def f(d):
+ try:
+  with u.urlopen('https://rdap.org/domain/'+d,timeout=5) as r: print(d,r.status,r.url)
+ except Exception as e: print(d,e)
+with c.ThreadPoolExecutor() as p: list(p.map(f,[a+'.'+b for a in ('canadian','canadianai') for b in ('org','io','co')]))
+PY"
+
+### #68 — assistant
+
+bash -lc /bin/bash -lc "for d in canadianai.org canadianai.io canadianai.co canadian.io canadian.co; do (curl -LsS --max-time 5 -w '\\n%{http_code} %{url_effective}\\n' \"https://rdap.org/domain/"'$d" | tail -c 550) & done
+wait'
+
+### #69–#77 — [removed: off-topic]
+
+### #78 — user
+
+ دادا چی داری می‌گی؟ دادا چی داری می‌گی؟ اصلاً وضع تموم شد، وضع لانچ شد الان تو مارکته. من الان دارم افتر مارکتش رو کار می‌کنم. دنبال کار مارکتینگشم
+
+### #79 — assistant
+
+ گرفتم؛ خوب، بذار یه لحظه دوباره فکر کنم دقیق‌تر بگم. حق با توئه، اون پیشنهاد به فاز الان نمی‌خورد. الان که لانچ شدی و تو مارکتینگی، اگه فقط یه مهارت بخوام بگم اینه که آزمایش کنی ببینی کدوم کانال واقعاً کاربر فعال میاره، نه فقط بازدید. مثلاً برای وزنه، دو تا ویدیوی خیلی کوتاه بساز: یکیش نشون بده وسط ست چقدر سریع با یه سوایپ وزنه رو ثبت می‌کنی، اون یکی نشون بده چطور پیشرفتت رو بین جلسات می‌بینی. هر دو رو برای مخاطب مشابه منتشر کن و تا جایی که داده‌هات اجازه می‌ده ببین کدوم‌ ویدیو بیشتر آدم‌هایی رو میاره که واقعاً اولین تمرینشون رو ثبت می‌کنن. اگه ویدیوی پربازدیده...
+
+### #80–#103 — [removed: off-topic]
 
 ### #104 — user
 

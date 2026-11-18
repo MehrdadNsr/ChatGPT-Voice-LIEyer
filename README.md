@@ -14,7 +14,7 @@ ChatGPT voice mode runs two systems. A fast voice model talks to you, and a stro
 
 In one session (479 messages, voice mode in Persian, GPT-6.2 selected, Work mode on), the transcript shows the voice layer:
 
-1. naming the wrong model;
+1. naming itself instead of the model doing the work;
 2. covering handoffs with a fake "let me check";
 3. changing details of the backend's text;
 4. cutting protected text out of the middle;
@@ -44,6 +44,8 @@ In several cases **the backend model itself confirmed it**.
 | Backend, `#13` | «این پاسخ رو کادکس بر پایهٔ جی‌پی‌تی شیش آماده کرده. اسم دقیق مدل صوتی که صداش رو می‌شنوی برام مشخص نیست. من «جی‌پی‌تی لایو یک‌ویک» رو گفتم که اشتباه بود.» | "This answer was prepared by Codex, based on GPT-6. I don't know the exact name of the voice model you're hearing. Saying 'GPT Live 1.1' was wrong." |
 
 The user can't tell which model is speaking, and the first answer was wrong.
+
+OpenAI's voice model is officially called GPT-Live-1, so the voice layer named its own family (with a version number I couldn't find). The issue is transparency: I selected GPT-6.2 and asked who was answering, and it named the voice front instead of the model that wrote the answer. The backend didn't know the voice model's name either.
 
 ## Finding 2: "Let me check" checks nothing
 

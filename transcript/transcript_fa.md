@@ -1,6 +1,6 @@
 # Full transcript (Persian, verbatim)
 
-Extracted from the ChatGPT conversation API on 2026-11-18. `[audio]` = user turn spoken in voice mode (as transcribed by ChatGPT). Message numbers match the README. Off-topic personal/business parts have been removed; numbering is kept so references stay valid. Kept from that section: the backend's raw bash/curl tool calls (#60, #65–#68), which show Codex executing tools behind the voice, and one exchange (#78–#79) where the backend corrects itself.
+Extracted from the ChatGPT conversation API on 2026-11-18. `[audio]` = user turn spoken in voice mode (as transcribed by ChatGPT). Message numbers match the README. Off-topic parts have been removed; numbering is kept so references stay valid. The backend's raw bash/curl tool calls (#60, #65–#68) are kept, since they show Codex executing tools behind the voice.
 
 ---
 
@@ -114,17 +114,18 @@ PY"
 bash -lc /bin/bash -lc "for d in canadianai.org canadianai.io canadianai.co canadian.io canadian.co; do (curl -LsS --max-time 5 -w '\\n%{http_code} %{url_effective}\\n' \"https://rdap.org/domain/"'$d" | tail -c 550) & done
 wait'
 
-### #69–#77 — [removed: off-topic]
+### #69–#99 — [removed: off-topic]
 
-### #78 — user
+### #100 — user
 
- دادا چی داری می‌گی؟ دادا چی داری می‌گی؟ اصلاً وضع تموم شد، وضع لانچ شد الان تو مارکته. من الان دارم افتر مارکتش رو کار می‌کنم. دنبال کار مارکتینگشم
+[audio]
+ آره، پایینش هم حالا می‌تونی بنویسی «وزنه»، یا تهش می‌تونی اون شبیه اینستاگرام هستش، یه جور دیگه «بوم» میاد، مثل ته اینستاگرام. ما می‌تونیم ته ویدیوهامون از اونا بذاریم که اونجوری یه حالت، یه حالت لوگویی بیادش، مثل مثل اینستاگرام، مثل تیک‌تاک که تموم می‌شه ویدیواشون یه چیز کوتاه میاد ش... به نظرت بذاریم همچین چیزی
 
-### #79 — assistant
+### #101 — assistant
 
- گرفتم؛ خوب، بذار یه لحظه دوباره فکر کنم دقیق‌تر بگم. حق با توئه، اون پیشنهاد به فاز الان نمی‌خورد. الان که لانچ شدی و تو مارکتینگی، اگه فقط یه مهارت بخوام بگم اینه که آزمایش کنی ببینی کدوم کانال واقعاً کاربر فعال میاره، نه فقط بازدید. مثلاً برای وزنه، دو تا ویدیوی خیلی کوتاه بساز: یکیش نشون بده وسط ست چقدر سریع با یه سوایپ وزنه رو ثبت می‌کنی، اون یکی نشون بده چطور پیشرفتت رو بین جلسات می‌بینی. هر دو رو برای مخاطب مشابه منتشر کن و تا جایی که داده‌هات اجازه می‌ده ببین کدوم‌ ویدیو بیشتر آدم‌هایی رو میاره که واقعاً اولین تمرینشون رو ثبت می‌کنن. اگه ویدیوی پربازدیده...
+ آره، آره، به نظر من خوبه؛ یه اوترو خیلی کوتاه، مثلاً یه ثانیه لوگو و شاید یه جمله خیلی ساده مثل «با وزنه شروع کن». چون توی شورت وقت طلاست، اوترو طولانی و لینک گفتن توی خود ویدیو رو بی‌خیال شو، بذار لوگو فقط یاد بمونه؛ مسیر کامل بره توی کپشن و کامنت پین‌شده.
 
-### #80–#103 — [removed: off-topic]
+### #102–#103 — [removed: off-topic]
 
 ### #104 — user
 

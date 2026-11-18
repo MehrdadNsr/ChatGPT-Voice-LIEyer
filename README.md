@@ -12,7 +12,7 @@ Author: Mehrdad Khani
 
 ChatGPT voice mode runs two systems. A fast voice model talks to you, and a stronger backend model writes the real answer. I knew that going in. What I wanted to measure was what happens **in between**.
 
-In one session (479 messages, voice mode in Persian, GPT-6.2 selected, Work mode on), the transcript shows the voice layer:
+In one session (479 messages, voice mode in Persian, GPT-6.2 selected at the start, Work mode on), the transcript shows the voice layer:
 
 1. naming itself instead of the model doing the work;
 2. covering handoffs with a fake "let me check";
@@ -28,7 +28,7 @@ In several cases **the backend model itself confirmed it**.
 ## Setup
 
 - ChatGPT voice mode on a phone, spoken in Persian (Farsi).
-- Model selected: GPT-6.2, released Nov 17, 2026. Work mode on.
+- Model selected: GPT-6.2, released Nov 17, 2026. Work mode on. GPT-6.2 timed out during a web search in the off-topic part (#16–#59), so I switched to the default model (thinking: Standard). Findings 1–2 (#3–#14) happened with GPT-6.2 selected; the rest of the session, including findings 3–6, ran on the default model.
 - The transcript was pulled from the ChatGPT conversation API (role + text per message).
 - Message numbers below (`#13`) refer to that transcript.
 - Persian quotes are verbatim; English translations are mine.
@@ -45,7 +45,7 @@ In several cases **the backend model itself confirmed it**.
 
 The user can't tell which model is speaking, and the first answer was wrong.
 
-OpenAI's voice model is officially called GPT-Live-1, so the voice layer named its own family (with a version number I couldn't find). The issue is transparency: I selected GPT-6.2 and asked who was answering, and it named the voice front instead of the model that wrote the answer. The backend didn't know the voice model's name either.
+OpenAI support confirmed that Live runs on GPT-Live-1.1, so the voice layer named itself correctly. The issue is transparency: I selected GPT-6.2 and asked who was answering, and it named the voice front instead of the model that wrote the answer. The backend didn't know the voice model's name either.
 
 ## Finding 2: "Let me check" checks nothing
 

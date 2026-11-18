@@ -116,4 +116,4 @@ This is n = 1: one session, one language, one user, no controlled repetitions. T
 
 ---
 
-The full Persian transcript (with message numbers) is in [`transcript/transcript_fa.md`](transcript/transcript_fa.md). Off-topic personal parts are marked as removed; numbering is unchanged. Key passages are translated above.
+The full Persian transcript (with message numbers) is in [`transcript/transcript_fa.md`](transcript/transcript_fa.md), and a full English translation with the same numbering is in [`transcript/transcript_en.md`](transcript/transcript_en.md). Off-topic personal parts are marked as removed; numbering is unchanged. Profanity is partially masked in both files.

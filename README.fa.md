@@ -115,6 +115,6 @@
 
 ---
 
-متن کامل فارسی گفتگو، با شمارهٔ پیام‌ها، تو [`transcript/transcript_fa.md`](transcript/transcript_fa.md) هست. بخش‌های شخصی و بی‌ربط با علامت «حذف‌شده» مشخص شدن و شماره‌گذاری دست نخورده.
+متن کامل فارسی گفتگو، با شمارهٔ پیام‌ها، تو [`transcript/transcript_fa.md`](transcript/transcript_fa.md) هست و ترجمهٔ کامل انگلیسی‌ش با همون شماره‌ها تو [`transcript/transcript_en.md`](transcript/transcript_en.md). بخش‌های شخصی و بی‌ربط با علامت «حذف‌شده» مشخص شدن و شماره‌گذاری دست نخورده. فحش‌ها تو هر دو فایل نیمه‌سانسور شدن.
 
 </div>
